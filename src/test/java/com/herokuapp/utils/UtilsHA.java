@@ -1,6 +1,4 @@
 package com.herokuapp.utils;
-
-import org.testng.ITestResult;
 import org.testng.annotations.DataProvider;
 
 public class UtilsHA {

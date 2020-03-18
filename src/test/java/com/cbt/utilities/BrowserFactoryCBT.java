@@ -9,7 +9,7 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 
 import java.util.concurrent.TimeUnit;
 
-public class BrowserFactory {
+public class BrowserFactoryCBT {
 
     private static WebDriver driver;
     private static String browser = "chrome";

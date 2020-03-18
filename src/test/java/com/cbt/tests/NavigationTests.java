@@ -1,6 +1,6 @@
 package com.cbt.tests;
 
-import com.cbt.utilities.BrowserFactory;
+import com.cbt.utilities.BrowserFactoryCBT;
 import com.cbt.utilities.StringUtility;
 import org.openqa.selenium.WebDriver;
 
@@ -17,7 +17,7 @@ public class NavigationTests {
     }
 
     public static void chromeTest() {
-        WebDriver driver = BrowserFactory.getDriver("chrome");
+        WebDriver driver = BrowserFactoryCBT.getDriver("chrome");
         driver.get("https://google.com");
         String googleTitle = "Google";
         driver.get("https://etsy.com");
@@ -30,7 +30,7 @@ public class NavigationTests {
     }
 
     public static void firefoxTest() {
-        WebDriver driver = BrowserFactory.getDriver("firefox");
+        WebDriver driver = BrowserFactoryCBT.getDriver("firefox");
         driver.get("https://google.com");
         String googleTitle = "Google";
         driver.get("https://etsy.com");
@@ -43,7 +43,7 @@ public class NavigationTests {
     }
 
     public static void ieTest() {
-        WebDriver driver = BrowserFactory.getDriver("ie");
+        WebDriver driver = BrowserFactoryCBT.getDriver("ie");
         driver.get("https://google.com");
         String googleTitle = "Google";
         driver.get("https://etsy.com");

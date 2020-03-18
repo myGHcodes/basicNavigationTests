@@ -1,9 +1,7 @@
 package com.cbt.utilities;
 
 import com.google.common.base.Verify;
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.Select;
 
 import java.util.Arrays;
 import java.util.List;
@@ -13,7 +11,7 @@ public class TitleVerification2 {
     static WebDriver driver;
     public static void main(String[] args) {
 
-        driver = BrowserFactory.getDriver("chrome");
+        driver = BrowserFactoryCBT.getDriver("chrome");
         List<String> urls = Arrays.asList( "https://wayfair.com",
                 "https://walmart.com", "https://westelm.com", "https://www.luluandgeorgia.com/");
         for (int i = 0; i < urls.size() ; i++) {

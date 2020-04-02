@@ -32,6 +32,8 @@ public class BrowserFactoryCBT {
                     WebDriverManager.iedriver().setup();
                     driver = new InternetExplorerDriver();
                     break;
+
+
             }
         }
         return driver;

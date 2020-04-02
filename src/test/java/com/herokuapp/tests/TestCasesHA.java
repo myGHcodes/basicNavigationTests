@@ -4,7 +4,9 @@ import com.herokuapp.pages.*;
 import com.herokuapp.testBase.TestBaseHA;
 import com.herokuapp.utils.UtilsHA;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.*;
 
@@ -21,11 +23,13 @@ public class TestCasesHA extends TestBaseHA {
     StatusCodesHA pStatusCodes = new StatusCodesHA();
 
 
+
     @Test(testName = "Test case #1", priority = 0, description = "https://practice-cybertekschool.herokuapp.com/")
     void wrongDOB() {
         pRgstForm.registrationLink.click();
         pRgstForm.birthday.sendKeys("wrong_dob");
         assertTrue(pRgstForm.dobWrnMsg.isDisplayed());
+        pRgstForm.birthday.sendKeys("May");
     }
 
     @Test(testName = "Test case #2", priority = 1, description = "https://practice-cybertekschool.herokuapp.com/")
@@ -103,16 +107,19 @@ public class TestCasesHA extends TestBaseHA {
     void autocomplete() {
         pAutocomplete.autocompleteLink.click();
         pAutocomplete.country.sendKeys("United States of America");
-        assertTrue(pAutocomplete.result.isDisplayed());
+        pAutocomplete.submitBtn.click();
+        assertEquals(pAutocomplete.result.getText().trim(), "You selected: United States of America");
     }
 
 
-    @Test(testName = "Test case #9-12", description = "https://practice-cybertekschool.herokuapp.com/", dataProvider = "test9-12",
-            priority = 9, dataProviderClass = UtilsHA.class)
+
+    @Test(testName = "Test case #9-12", description = "https://practice-cybertekschool.herokuapp.com/", dataProvider = "test9-12", priority = 9, dataProviderClass = UtilsHA.class)
     public void statusCodes(String statusCode, String message) {
         pStatusCodes.statusCodesLink.click();
         driver.findElement(By.linkText(statusCode)).click();
         assertTrue(pStatusCodes.tagName.getText().contains(message));
+        System.out.println(driver.findElement(By.xpath("//*[@id='content']/div/p")).getText());
+
     }
 
 

@@ -18,6 +18,9 @@ public class AutocompleteHA {
     @FindBy(name = "myCountry")
     public WebElement country;
 
+    @FindBy(xpath = "//input[@class ='btn btn-primary']")
+    public WebElement submitBtn;
+
     @FindBy(id="result")
     public WebElement result;
 }

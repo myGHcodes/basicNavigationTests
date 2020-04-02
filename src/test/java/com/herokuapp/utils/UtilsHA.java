@@ -15,7 +15,7 @@ public class UtilsHA {
         BrowserFactoryHA.getDriver().navigate().to(url);
     }
 
-    @DataProvider(name = "test9-12 ")
+    @DataProvider(name = "test9-12")
     public static Object[][] createData() {
         return new Object[][]{
                 {"200", "This page returned a 200 status code."},
